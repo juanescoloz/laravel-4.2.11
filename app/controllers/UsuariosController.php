@@ -6,8 +6,9 @@ class UsuariosController extends BaseController {
 		$estados = EstadoModel::all();
 		$roles = RolModel::all();
 		$cargos = CargoModel::all();
+		$ciudades = CiudadModel::all();
 
-		return View::make('usuarios.form', array('todoestados' => $estados,'todoroles' => $roles),['todocargos' => $cargos]);
+		return View::make('usuarios.form', array('todoestados' => $estados,'ciudades' => $ciudades,'todoroles' => $roles),['todocargos' => $cargos]);
 
 		//return View::make('usuarios.form');
 	}
@@ -24,6 +25,8 @@ class UsuariosController extends BaseController {
 		// return View::make('rol.detalles', array('rol' => $rol,'permi' => $permi) );
 	
 	}
+
+
 	
 	public function Create()
 	{
@@ -82,7 +85,70 @@ class UsuariosController extends BaseController {
 		return View::make('usuarios.calendarusuario');
 	}
 
+	public function cambioPass($id){
 
+		$usuarios = UsuariosModel::where('id_usuario', $id)->get();
+		$historial = AuditoriaModel::where('usuario', Auth::user()->PrimerNombre." ".Auth::user()->PrimerApellido)->get();
+
+		$usuario = UsuariosModel::find($id);
+
+		$usuario->password = Hash::make(Input::get('password'));
+
+		if($usuario->save()){
+			Session::flash('message', 'Contraseña Actualizada!');
+			Session::flash('class', 'success');
+		}else{
+			Session::flash('message', 'No se fue posible cambiar la contraseña');
+			Session::flash('class', 'danger');
+		}
+
+		return View::make('usuarios.profile', array('todousuarios' => $usuarios,'todohistotial' => $historial));
+	}
+
+	public function editarView($id)
+	{	
+		$usuarios = UsuariosModel::where('id_usuario','=', $id)->get();
+		$estados = EstadoModel::all();
+		$roles = RolModel::all();
+		$cargos = CargoModel::all();
+		$ciudades = CiudadModel::all();
+
+		return View::make('usuarios.editar', array('usuarios' => $usuarios,'todoestados' => $estados,'ciudades' => $ciudades,'todoroles' => $roles),['todocargos' => $cargos]);
+
+		//return View::make('usuarios.form');
+	}
+
+	public function editar($id){
+		$usuarios = UsuariosModel::find($id);
+
+		$usuarios->identificacion = Input::get('InputIden');
+		$usuarios->celular = Input::get('InputCelular');
+		$usuarios->PrimerNombre = Input::get('InputName');
+		$usuarios->PrimerApellido = Input::get('InputNamee');
+		$usuarios->email = Input::get('InputEmail');
+		$usuarios->telefono = Input::get('InputTel');
+		$usuarios->username = Input::get('InputUser');
+		$usuarios->direccion = Input::get('InputDireccion');
+		$usuarios->EstadoCivil = Input::get('InputEstadoCivil');
+		$usuarios->estado_id = Input::get('InputIdEstado');
+		$usuarios->rol_id = Input::get('InputIdRol');
+		$usuarios->id_cargo = Input::get('InputCargo');
+		$usuarios->Pais = Input::get('InputPais');
+		$usuarios->Ciudad = Input::get('InputCiudad');
+		$usuarios->Sexo = Input::get('InputSexo');
+
+		if($usuarios->save()){
+			Session::flash('message', 'Los datos del usuario se modificaron correctamente!');
+			Session::flash('class', 'success');
+		}else{
+			Session::flash('message', 'No se fue posible modificar la información');
+			Session::flash('class', 'danger');
+		}
+
+		$usuarios = UsuariosModel::all();
+		return View::make('usuarios.detallesusuarios', array('todousuarios' => $usuarios));
+
+	}
 	
 
 }

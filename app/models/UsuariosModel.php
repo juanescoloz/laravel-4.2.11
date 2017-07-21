@@ -9,7 +9,7 @@ class UsuariosModel extends Eloquent {
 	
 	protected $primaryKey = 'id_usuario';
 
-	protected $fillable = array('PrimerNombre','PrimerApellido','Sexo','EstadoCivil','Pais','Ciudad','username','password','imagen','identificacion','telefono','email','direccion','celular');
+	protected $fillable = array('PrimerNombre','PrimerApellido','Sexo','EstadoCivil','Pais','username','password','imagen','identificacion','telefono','email','direccion','celular');
 
 	public $timestamps = false;
 	
@@ -24,6 +24,11 @@ class UsuariosModel extends Eloquent {
 	public function cargos()
 	{
 		return $this->belongsTo('CargoModel','id_cargo');
+	}
+
+	public function ciudades()
+	{
+		return $this->belongsTo('CiudadModel','Ciudad');
 	}
 
 }

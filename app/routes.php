@@ -35,11 +35,15 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::get('principal', 'PrincipalController@index');
 	Route::get('CerrarSesion', 'LoginController@logout');
 
+	// rutas modulo usuarios
 	Route::get('FormUsuario', 'UsuariosController@Mostrar');
 	Route::post('CrearUsuario', 'UsuariosController@Create');
 	Route::get('ListarUsuario', 'UsuariosController@Listar');
 	Route::get('CalendarUsuario', 'UsuariosController@Calendar');
 	Route::get('VerPerfil/{id}', 'UsuariosController@PerfilView');
+	Route::post('ChangePass/{id}', 'UsuariosController@cambioPass');
+	Route::get('modificarUsuario/{id}', 'UsuariosController@editarView');
+	Route::post('modificarUsuario/{id}', 'UsuariosController@editar');
 	
 	
 	

@@ -18,6 +18,16 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Listado Usuarios</h2>
+                    @if(Session::has('message'))
+                      <div id="alert">
+                        <div class="col-sm-12 hr hr-18 hr-double dotted"></div>
+                        <div class="col-sm-4 col-xs-12 col-sm-offset-4 alert alert-{{Session::get('class')}}">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          {{Session::get('message')}}
+                          <br>
+                        </div>
+                      </div>
+                    @endif
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -72,7 +82,7 @@
                                 {{$todo->Pais}}
                               </td>
                               <td>
-                                {{$todo->Ciudad}}
+                                {{$todo->ciudades->descripcion}}
                               </td>
                               <td>
                                 {{$todo->username}}
@@ -83,7 +93,7 @@
                                     <i class="ace-icon fa fa-search-plus bigger-130 tooltip-info" data-rel="tooltip" title="Detalles"></i>
                                   </a>
 
-                                  <a class="green" href="">
+                                  <a class="green" href="{{url('modificarUsuario')}}/{{$todo->id_usuario}}">
                                     <i class="ace-icon fa fa-pencil bigger-130 tooltip-success" data-rel="tooltip" title="Editar"></i>
                                   </a>
 
@@ -137,10 +147,17 @@
 
 @stop
 @section('scripts_page')
+
    
 @stop
 @section('scripts_relative')
-
+  <script>
+    // Tiempo del mensaje
+      $('#alert').fadeOut(6000, function() {
+        $(this).remove();
+      });
+    
+  </script>
 @stop
 	
 
