@@ -89,7 +89,7 @@
                               </td>
                               <td>
                                 <div class="hidden-sm hidden-xs action-buttons text-center">
-                                  <a class="blue" href="">
+                                  <a class="blue" href="{{url('VerPerfil')}}/{{$todo->id_usuario}}">
                                     <i class="ace-icon fa fa-search-plus bigger-130 tooltip-info" data-rel="tooltip" title="Detalles"></i>
                                   </a>
 

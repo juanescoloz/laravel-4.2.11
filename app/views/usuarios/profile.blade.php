@@ -173,7 +173,9 @@
                       <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                           <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Actividad Reciente</a>
                           </li>
-                          <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Cambiar Contraseña</a>
+                          @if(Auth::User()->id_usuario == $todo->id_usuario)
+                            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Cambiar Contraseña</a>
+                          @endif
                           </li>
                         </ul>
                         {{-- agregamos el primer tab --}}
@@ -195,10 +197,10 @@
                                 <tr>
                                
                                   <td>
-                                    <img src="{{asset('assets/images/avatars')}}/{{Auth::User()->imagen}}" alt="{{Auth::User()->imagen}}" class="avatar" alt="Avatar">
+                                    <img src="{{asset('assets/images/avatars')}}/{{$todo->imagen}}" alt="{{$todo->imagen}}" class="avatar" alt="Avatar">
                                   </td>
                                   <td>
-                                    {{Auth::User()->PrimerNombre}} {{Auth::User()->PrimerApellido}}
+                                    {{$todo->PrimerNombre}} {{$todo->PrimerApellido}}
                                   </td>
                                   <td>{{$todohistotial->accion}}</td>
                                   <td>{{$todohistotial->fecha_hora}}</td>
