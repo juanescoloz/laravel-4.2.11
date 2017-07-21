@@ -10,16 +10,16 @@
     <title>Iniciar Sesion</title>
 
     <!-- Bootstrap -->
-    <link href="../../laravel-4.2.11/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../../laravel-4.2.11/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{url('vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../../laravel-4.2.11/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="{{url('vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="../../laravel-4.2.11/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="{{url('vendors/animate.css/animate.min.css')}}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../../laravel-4.2.11/build/css/custom.min.css" rel="stylesheet">
+    <link href="{{url('build/css/custom.min.css')}}" rel="stylesheet">
   </head>
 
   <body class="login"> 
