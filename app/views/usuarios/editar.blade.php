@@ -57,12 +57,12 @@
                       </div>
 
                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Nombres" required="required" value="{{$usuarios->PrimerNombre}}">
+                        <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Nombres" required="required" value="{{$usuarios->nombres}}">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="Apellidos" required="required" value="{{$usuarios->PrimerApellido}}">
+                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="Apellidos" required="required" value="{{$usuarios->apellidos}}">
                         <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                       </div>
 
@@ -118,9 +118,9 @@
                             <option value="">&nbsp;</option>
                             @foreach($todoestados as $todoestados)
                               @if($usuarios->estado_id == $todoestados->id_estado)
-                                <option value="{{$todoestados->id_estado}}" selected="">{{$todoestados->Descripcion}}</option>
+                                <option value="{{$todoestados->id_estado}}" selected="">{{$todoestados->descripcion}}</option>
                               @else
-                                <option value="{{$todoestados->id_estado}}">{{$todoestados->Descripcion}}</option>
+                                <option value="{{$todoestados->id_estado}}">{{$todoestados->descripcion}}</option>
                               @endif
                             @endforeach 
                           </select>
@@ -138,9 +138,9 @@
                             <option value="">&nbsp;</option>
                             @foreach($todoroles as $todoroles)
                               @if($usuarios->rol_id == $todoroles->id_rol)
-                                <option value="{{$todoroles->id_rol}}" selected>{{$todoroles->Descripcion}}</option>
+                                <option value="{{$todoroles->id_rol}}" selected>{{$todoroles->descripcion}}</option>
                               @else
-                                <option value="{{$todoroles->id_rol}}">{{$todoroles->Descripcion}}</option>
+                                <option value="{{$todoroles->id_rol}}">{{$todoroles->descripcion}}</option>
                               @endif
                             @endforeach 
                           </select>
@@ -171,34 +171,14 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pais</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="select2_single form-control" tabindex="-1" id="InputPais" name="InputPais">
-                            <option></option>
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="CA">California</option>
-                            <option value="NV">Nevada</option>
-                            <option value="OR">Oregon</option>
-                            <option value="WA">Washington</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="CO">Colorado</option>
-                            <option value="ID">Idaho</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="UT">Utah</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TX">Texas</option>
+                            <option value="">&nbsp;</option>
+                            @foreach($paises as $paises)
+                              @if($usuarios->pais_id == $paises->pais_id)
+                                <option value="{{$paises->pais_id}}" selected>{{$paises->descripcion}}</option>
+                              @else
+                                <option value="{{$paises->pais_id}}">{{$paises->descripcion}}</option>
+                              @endif
+                            @endforeach 
                           </select>
                         </div>
                       </div>
@@ -208,7 +188,7 @@
                           <select class="select2_group form-control" id="InputCiudad" name="InputCiudad">
                               <option value="">&nbsp;</option>
                             @foreach($ciudades as $ciudades)
-                              @if($usuarios->Ciudad == $ciudades->ciudad_id)
+                              @if($usuarios->ciudad_id == $ciudades->ciudad_id)
                                 <option value="{{$ciudades->ciudad_id}}" selected>{{$ciudades->descripcion}}</option>
                               @else
                                 <option value="{{$ciudades->ciudad_id}}">{{$ciudades->descripcion}}</option>

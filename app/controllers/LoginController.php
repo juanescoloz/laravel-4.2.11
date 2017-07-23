@@ -44,11 +44,27 @@ class LoginController extends BaseController{
 
 		$usuario = new Login();
 
-		$usuario->nombre = Input::get('nombre');
+		$usuario->nombres = 'Felipe';
+		$usuario->apellidos = 'Medel';
 		$usuario->username = Input::get('username');
 		$usuario->password = Hash::make(Input::get('password'));
+		$usuario->estado_civil = 'Soltero(a)';
+		$usuario->sexo = 'Masculino';
+		$usuario->rol_id = 1;
+		$usuario->estado_id = 1;
+		$usuario->identificacion = '12343312342';
+		$usuario->direccion = 'Cll 123 No 6-45 B/ Palmares';
+		$usuario->id_cargo = 1;
+		$usuario->ciudad_id = 1;
+		$usuario->pais_id = 1;
 
-		$usuario->save();
+		if($usuario->save()){
+			return Redirect::to('login');	
+		}else{
+			return 'nose guardo';
+		}
+
+		
 
 	}
 }

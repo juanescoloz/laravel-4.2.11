@@ -49,9 +49,7 @@
                           <th>Telefono</th>
                           <th>Email</th>
                           <th>Direccion</th>
-                          <th>Pais</th>
                           <th>Ciudad</th>
-                          <th>Usuario</th>
                           <th>Opciones</th>
                         </tr>
                       </thead>
@@ -64,7 +62,7 @@
                                 <img src="{{asset('assets/images/avatars')}}/{{$todo->imagen}}" alt="{{$todo->imagen}}" class="img-circle" width="50px" height="50px">
                               </td>
                               <td>
-                                {{$todo->PrimerNombre}} {{$todo->PrimerApellido}} 
+                                {{$todo->nombres}} {{$todo->apellidos}} 
                               </td> 
                               <td>
                                 {{$todo->identificacion}}
@@ -79,13 +77,7 @@
                                 {{$todo->direccion}}
                               </td>
                               <td>
-                                {{$todo->Pais}}
-                              </td>
-                              <td>
-                                {{$todo->ciudades->descripcion}}
-                              </td>
-                              <td>
-                                {{$todo->username}}
+                                {{$todo->ciudades->descripcion}}, {{$todo->paises->descripcion}}
                               </td>
                               <td>
                                 <div class="hidden-sm hidden-xs action-buttons text-center">

@@ -11,10 +11,4 @@ class AuditoriaModel extends Eloquent {
 	public $timestamps = false;
 
 
-	public function usuarios(){
-		
-		return $this->belongsTo('UsuariosModel', 'usuario');
-		
-	}
-
 }

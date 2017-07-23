@@ -68,7 +68,7 @@
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
-                <h2>{{Auth::User()->PrimerNombre}} {{Auth::User()->PrimerApellido}}</h2>
+                <h2>{{Auth::User()->nombres}} {{Auth::User()->apellidos}}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->

@@ -73,7 +73,7 @@
                       <br>
                       <div class="profile_title">
                         <div class="col-md-12">
-                          <h2>{{$todo->PrimerNombre}} {{$todo->PrimerApellido}}</h2>
+                          <h2>{{$todo->nombres}} {{$todo->apellidos}}</h2>
                         </div>
                         
                       </div>
@@ -85,9 +85,9 @@
                           <i class="fa fa-user user-profile-icon"></i> Usuario. {{$todo->username}}
                         </li>
                         <li>
-                          <i class="fa fa-check-circle-o user-profile-icon"></i> Tipo. {{$todo->roles->Descripcion}}
+                          <i class="fa fa-check-circle-o user-profile-icon"></i> Tipo. {{$todo->roles->descripcion}}
                         </li>
-                        <li><i class="fa fa-map-marker user-profile-icon"></i> Ciudad. {{$todo->ciudades->descripcion}}, {{$todo->Pais}}
+                        <li><i class="fa fa-map-marker user-profile-icon"></i> Ciudad. {{$todo->ciudades->descripcion}}, {{$todo->paises->descripcion}}
                         </li>
                       </ul>
 
@@ -105,7 +105,7 @@
                                   <div class="profile-info-name"> Nombre </div>
 
                                   <div class="profile-info-value">
-                                    <span class="editable" id="nombres">{{$todo->PrimerNombre}} {{$todo->PrimerApellido}}</span>
+                                    <span class="editable" id="nombres">{{$todo->nombres}} {{$todo->apellidos}}</span>
                                   </div>
                                 </div>
 
@@ -160,7 +160,7 @@
                                   <div class="profile-info-name"> Estado </div>
 
                                   <div class="profile-info-value">
-                                    <span class="editable" id="estado">{{$todo->estados->Descripcion}}</span>
+                                    <span class="editable" id="estado">{{$todo->estados->descripcion}}</span>
                                   </div>
                                 </div>
 
@@ -200,7 +200,7 @@
                                     <img src="{{asset('assets/images/avatars')}}/{{$todo->imagen}}" alt="{{$todo->imagen}}" class="avatar" alt="Avatar">
                                   </td>
                                   <td>
-                                    {{$todo->PrimerNombre}} {{$todo->PrimerApellido}}
+                                    {{$todo->nombres}} {{$todo->apellidos}}
                                   </td>
                                   <td>{{$todohistotial->accion}}</td>
                                   <td>{{$todohistotial->fecha_hora}}</td>

@@ -11,10 +11,10 @@ class Login extends Eloquent implements UserInterface, RemindableInterface {
 
 	
 	protected $table = 'usuario';
-
+	
 	protected $primaryKey = 'id_usuario';
 
-	protected $fillable = array('PrimerNombre','PrimerApellido','Sexo','EstadoCivil','Pais','Ciudad','Usuario','Contrasena','remember_token');
+	protected $fillable = array('nombres','apellido','sexo','estado_civil','username','password','imagen','identificacion','telefono','email','direccion','celular');
 
 	public $timestamps = false;
 
