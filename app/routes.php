@@ -44,6 +44,11 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::post('ChangePass/{id}', 'UsuariosController@cambioPass');
 	Route::get('modificarUsuario/{id}', 'UsuariosController@editarView');
 	Route::post('modificarUsuario/{id}', 'UsuariosController@editar');
+
+	// rutas modulo proveedores
+	Route::get('FormProveedor', 'ProveedorController@Mostrar');
+
+	
 	
 	
 	

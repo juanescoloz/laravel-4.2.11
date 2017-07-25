@@ -21,7 +21,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Crear Usuario</h3>
+                <h3>Crear Proveedor</h3>
               </div>
 
             </div>
@@ -34,7 +34,7 @@
 
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Informacion Personal</h2>
+                    <h2>Información</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -124,7 +124,7 @@
                         <select class="form-control" id="InputIdEstado" name="InputIdEstado" required="required">
                             <option value="">&nbsp;</option>
                             @foreach($todoestados as $todoestados)
-                            <option value="{{$todoestados->id_estado}}">{{$todoestados->Descripcion}}</option>
+                            <option value="{{$todoestados->id_estado}}">{{$todoestados->descripcion}}</option>
                             @endforeach 
                           </select>
                           <!-- <select class="form-control" id="InputIdEstado" name="InputIdEstado">
@@ -134,69 +134,6 @@
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rol</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control" id="InputIdRol" name="InputIdRol" required="required">
-                            <option value="">&nbsp;</option>
-                            @foreach($todoroles as $todoroles)
-                            <option value="{{$todoroles->id_rol}}">{{$todoroles->Descripcion}}</option>
-                            @endforeach 
-                          </select>
-                          <!-- <select class="form-control" id="InputIdRol" name="InputIdRol">
-                            <option value="1">rol</option>
-                         
-                          </select> -->
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Cargo</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control" id="InputCargo" name="InputCargo" required="required">
-                            <option value="">&nbsp;</option>
-                            @foreach($todocargos as $todocargos)
-                            <option value="{{$todocargos->id_cargo}}">{{$todocargos->descripcion}}</option>
-                            @endforeach 
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pais</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="select2_single form-control" tabindex="-1" id="InputPais" name="InputPais">
-                            <option></option>
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="CA">California</option>
-                            <option value="NV">Nevada</option>
-                            <option value="OR">Oregon</option>
-                            <option value="WA">Washington</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="CO">Colorado</option>
-                            <option value="ID">Idaho</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="UT">Utah</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TX">Texas</option>
-                          </select>
-                        </div>
-                      </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Ciudad</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
