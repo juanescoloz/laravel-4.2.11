@@ -80,9 +80,9 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="form-control" id="InputTipoDocumento" name="InputTipoDocumento" required="required">
                             <option value="">&nbsp;</option>
-                            <option value="Nit">Nit</option>
-                            <option value="Cedula Ciudadania">Cedula Ciudadania</option>
-                            <option value="RUT">RUT</option>
+                            @foreach($todotiposdocumentos as $todotiposdocumentos)
+                            <option value="{{$todotiposdocumentos->id_tipo_documento}}">{{$todotiposdocumentos->descripcion}}</option>
+                            @endforeach 
                           </select>
                         </div>
                       </div>
@@ -109,12 +109,13 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo Persona</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="form-control" id="InputEstadoCivil" name="InputEstadoCivil" required="required">
                             <option value="">&nbsp;</option>
-                            <option value="Natural">Natural</option>
-                            <option value="Juridica">Juridica</option>
+                            @foreach($todotipospersonas as $todotipospersonas)
+                            <option value="{{$todotipospersonas->id_tipo_persona}}">{{$todotipospersonas->descripcion}}</option>
+                            @endforeach 
                           </select>
                         </div>
                       </div>

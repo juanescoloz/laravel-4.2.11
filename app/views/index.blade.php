@@ -91,7 +91,7 @@
                   <li><a><i class="fa fa-edit"></i> Proveedores <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('FormProveedor')}}">Crear Proveedor</a></li>
-                      <li><a href="form_advanced.html">Visualizar Proveedores</a></li>
+                      <li><a href="{{url('ListarProveedor')}}">Visualizar Proveedores</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Recursos Humanos <span class="fa fa-chevron-down"></span></a>

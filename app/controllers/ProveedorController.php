@@ -6,8 +6,10 @@ class ProveedorController extends BaseController {
 	{
 		$estados = EstadoModel::all();
 		$ciudades = CiudadModel::all();
+		$tiposdocumentos = TipoDocumentoModel::all();
+		$tipospersonas = TipoPersonaModel::all();
 
-		return View::make('proveedores.form', array('todoestados' => $estados,'ciudades' => $ciudades));
+		return View::make('proveedores.form', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas));
 	}
 
 	
@@ -23,7 +25,7 @@ class ProveedorController extends BaseController {
 
 		$proveedor = new ProveedorModel;
 
-		$proveedor->tipo_documento = Input::get('InputTipoDocumento');
+		$proveedor->id_tipo_documento = Input::get('InputTipoDocumento');
 		$proveedor->nit_cc = Input::get('InputIden');	
 		$proveedor->nombres = Input::get('InputName');
 		$proveedor->apellidos = Input::get('InputNamee');
@@ -35,7 +37,7 @@ class ProveedorController extends BaseController {
 		$proveedor->celular = Input::get('InputCelular');
 		$proveedor->fax = Input::get('InputFax');
 		$proveedor->email = Input::get('InputEmail');
-		$proveedor->tipo_proveedor = Input::get('InputEstadoCivil');
+		$proveedor->id_tipo_persona = Input::get('InputEstadoCivil');
 
 		
 		if ($proveedor->save()){
@@ -53,7 +55,7 @@ class ProveedorController extends BaseController {
 	public function Listar()
 	{	
 		$proveedores = ProveedorModel::all();
-		return View::make('proveedores.detalleproveedores', array('todoproveedores' => $proveedores));
+		return View::make('proveedores.detalleproveedor', array('todoproveedores' => $proveedores));
 	}
 
 }
