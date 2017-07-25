@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title')
-  CrearUsuario
+  Crear Proveedores
 @stop
 
 @section('css_page')
@@ -43,17 +43,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="post" action="{{url('CrearUsuario')}}" enctype="multipart/form-data">
-
-                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="InputIden" name="InputIden" placeholder="Identificacion" pattern=".{6,}" required title="Minimo 3 caracteres" maxlength="12">
-                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                      </div>
-
-                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputCelular" name="InputCelular" data-inputmask="'mask' : '(999) 999-9999'" placeholder="Celular" required="required">
-                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
-                      </div>
+                    <form class="form-horizontal form-label-left" method="post" action="{{url('CrearProveedor')}}" enctype="multipart/form-data">
 
                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Nombres" required="required">
@@ -61,7 +51,7 @@
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="Apellidos" required="required">
+                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="Apellidos(Opcional)" >
                         <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                       </div>
 
@@ -71,32 +61,43 @@
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="InputSitioWeb" name="InputSitioWeb" placeholder="www.domin.com">
+                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input type="text" class="form-control" id="InputTel" name="InputTel" data-inputmask="'mask' : '(999) 999-9999'" placeholder="Telefono" required="required">
+                        <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="InputCelular" name="InputCelular" data-inputmask="'mask' : '(999) 999-9999'" placeholder="Celular" required="required">
                         <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Usuario</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo Documento</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Digite Usuario" id="InputUser" name="InputUser" required="required" onkeypress="return val(event)">
+                          <select class="form-control" id="InputTipoDocumento" name="InputTipoDocumento" required="required">
+                            <option value="">&nbsp;</option>
+                            <option value="Nit">Nit</option>
+                            <option value="Cedula Ciudadania">Cedula Ciudadania</option>
+                            <option value="RUT">RUT</option>
+                          </select>
                         </div>
                       </div>
-
-                      <div class="form-group">
-                      <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="imagen">
-                      Foto:</label>
-
-                      <div class="col-xs-12 col-sm-9">
-                        <div class="clearfix col-xs-12 col-sm-9">
-                          <input type="file" id="id-input-file-3" name="imagen">
-                        </div>
-                      </div>
-                    </div>
                       
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contraseña</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Identificacion</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="password" class="form-control" placeholder="**************" id="InputPasword" name="InputPasword" pattern=".{6,}" required title="Minimo 5 caracteres, Maximo 8" maxlength="8">
+                          <input type="text" class="form-control" placeholder="Digite Identificacion" id="InputIden" name="InputIden" required="required">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fax</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Digite Fax (Opcional)" id="InputFax" name="InputFax">
                         </div>
                       </div>
 
@@ -108,12 +109,12 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado Civil</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control" id="InputEstadoCivil" name="InputEstadoCivil">
-                            <option>Casado</option>
-                            <option>Soltero</option>
-                            <option>Union Libre</option>
+                          <select class="form-control" id="InputEstadoCivil" name="InputEstadoCivil" required="required">
+                            <option value="">&nbsp;</option>
+                            <option value="Natural">Natural</option>
+                            <option value="Juridica">Juridica</option>
                           </select>
                         </div>
                       </div>
@@ -121,7 +122,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                        <select class="form-control" id="InputIdEstado" name="InputIdEstado" required="required">
+                        <select class="form-control" id="InputIdEstado" name="InputIdEstado" required="required" required="required">
                             <option value="">&nbsp;</option>
                             @foreach($todoestados as $todoestados)
                             <option value="{{$todoestados->id_estado}}">{{$todoestados->descripcion}}</option>
@@ -137,38 +138,12 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Ciudad</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="select2_group form-control" id="InputCiudad" name="InputCiudad">
+                          <select class="select2_group form-control" id="InputCiudad" name="InputCiudad" required="required">
                               <option value="">&nbsp;</option>
                             @foreach($ciudades as $ciudades)
                               <option value="{{$ciudades->ciudad_id}}">{{$ciudades->descripcion}}</option>
                             @endforeach
                           </select>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Sexo</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control" id="InputSexo" name="InputSexo" required="required">
-                            <option value="">&nbsp;</option>
-                            <option value="M">Masculino</option>
-                            <option value="F">Femenino</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3 col-sm-3 col-xs-12 control-label">Acepta Terminos de CarlosOspina?
-                          <br>
-                        </label>
-
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="flat" checked="checked"> Acepto
-                            </label>
-                          </div>
-
                         </div>
                       </div>
 
@@ -196,18 +171,6 @@
               </div>
 @stop
 @section('scripts_page')
-
-
-  
-  <script>
-  function val(e) {
-      tecla = (document.all) ? e.keyCode : e.which;
-      if (tecla==8) return true;
-      patron =/[A-Za-z]/;
-      te = String.fromCharCode(tecla);
-      return patron.test(te);
-  }
-  </script>
   
 @stop
 	

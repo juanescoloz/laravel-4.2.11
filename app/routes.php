@@ -47,6 +47,8 @@ Route::group(array('before'=> 'auth'), function(){
 
 	// rutas modulo proveedores
 	Route::get('FormProveedor', 'ProveedorController@Mostrar');
+	Route::post('CrearProveedor', 'ProveedorController@Create');
+	
 
 	
 	

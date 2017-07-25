@@ -1,7 +1,7 @@
 <?php
 
 
-class UsuariosModel extends Eloquent {
+class ProveedorModel extends Eloquent {
 
 	
 
