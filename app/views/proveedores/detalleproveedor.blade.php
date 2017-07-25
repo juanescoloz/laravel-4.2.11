@@ -85,7 +85,7 @@
                                     <i class="ace-icon fa fa-search-plus bigger-130 tooltip-info" data-rel="tooltip" title="Detalles"></i>
                                   </a>
 
-                                  <a class="green" href="{{url('modificarUsuario')}}/{{$todo->id_proveedor}}">
+                                  <a class="green" href="{{url('modificarProveedor')}}/{{$todo->id_proveedor}}">
                                     <i class="ace-icon fa fa-pencil bigger-130 tooltip-success" data-rel="tooltip" title="Editar"></i>
                                   </a>
 

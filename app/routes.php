@@ -49,6 +49,8 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::get('FormProveedor', 'ProveedorController@Mostrar');
 	Route::post('CrearProveedor', 'ProveedorController@Create');
 	Route::get('ListarProveedor', 'ProveedorController@Listar');
+	Route::get('modificarProveedor/{id}', 'ProveedorController@editarView');
+	
 
 	
 	
