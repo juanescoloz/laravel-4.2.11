@@ -43,8 +43,8 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
+                          <th>Documento</th>
                           <th>Nombre</th>
-                          <th>Tipo</th>
                           <th>NIT/CC</th>
                           <th>Telefonos</th>
                           <th>Contacto</th>
@@ -59,10 +59,10 @@
                          @foreach($todoproveedores as $todo)
                             <tr>
                               <td>
-                                {{$todo->nombres}} {{$todo->apellidos}} 
+                                 {{$todo->tipodocumentos->descripcion}}
                               </td> 
                               <td>
-                                {{$todo->tipodocumentos->descripcion}}
+                                {{$todo->nombres}} {{$todo->apellidos}}
                               </td>
                               <td>
                                 {{$todo->nit_cc}}

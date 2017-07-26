@@ -26,8 +26,13 @@ class LoginController extends BaseController{
         if (Auth::attempt($data)) 
         {
             // Si nuestros datos son correctos mostramos la página de inicio
-            return Redirect::intended('principal');
-            // return "Usuario logeado";
+            $auditoria = new AuditoriaModel;
+			$auditoria->tabla = "Login";
+			$auditoria->accion = "Inicio Sesion";
+            if ($auditoria->save()){
+				UsuarioAuditoriaModel::create(['id_usuario' => Auth::user()->id_usuario, 'id_auditoria' => $auditoria->id_auditoria]);
+				return Redirect::intended('principal');
+			}
         }else{
         // Si los datos no son los correctos volvbnemos al login y mostramos un error
             // return Redirect::back()->with('error_message', 'Los datos no concuerdan con ningun usuario')->withInput();
@@ -36,8 +41,16 @@ class LoginController extends BaseController{
 	}
 	public function logout(){
         
-        Auth::logout();
-        return Redirect::to('login');
+        	$auditoria = new AuditoriaModel;
+			$auditoria->tabla = "Login";
+			$auditoria->accion = "Cerro Sesion";
+            if ($auditoria->save()){
+				UsuarioAuditoriaModel::create(['id_usuario' => Auth::user()->id_usuario, 'id_auditoria' => $auditoria->id_auditoria]);
+		        Auth::logout();
+		        return Redirect::to('login');
+		    }else{
+		    	return View::make('principal');
+		    }
     }
 
 	public function guardar(){

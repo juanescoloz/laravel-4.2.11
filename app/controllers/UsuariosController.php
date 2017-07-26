@@ -18,6 +18,7 @@ class UsuariosController extends BaseController {
 	{
 		$usuarios = UsuariosModel::where('id_usuario', $id)->get();
 		// $historial = AuditoriaModel::where('usuario', Auth::user()->PrimerNombre." ".Auth::user()->PrimerApellido)->get
+
 		$historial = AuditoriaModel::all();
 		return View::make('usuarios.profile', array('todousuarios' => $usuarios,'todohistotial' => $historial));
 	

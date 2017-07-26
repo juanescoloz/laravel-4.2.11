@@ -35,4 +35,9 @@ class UsuariosModel extends Eloquent {
 	{
 		return $this->belongsTo('PaisModel','pais_id');
 	}
+
+	public function auditorias()
+	{
+		return $this->belongsToMany('AuditoriaModel', 'usuario_auditoria', 'id_usuario', 'id_auditoria');
+	}
 }

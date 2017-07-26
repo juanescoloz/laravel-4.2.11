@@ -193,7 +193,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach($todohistotial as $todohistotial)
+                                @foreach($todo->auditorias as $auditorias)
                                 <tr>
                                
                                   <td>
@@ -202,10 +202,9 @@
                                   <td>
                                     {{$todo->nombres}} {{$todo->apellidos}}
                                   </td>
-                                  <td>{{$todohistotial->accion}}</td>
-                                  <td>{{$todohistotial->fecha_hora}}</td>
-                                  <td>{{$todohistotial->tabla}}</td>
-                                  
+                                    <td>{{$auditorias->accion}}</td>
+                                    <td>{{$auditorias->fecha_hora}}</td>
+                                    <td>{{$auditorias->tabla}}</td>
                                 </tr>
                                @endforeach
                                
