@@ -28,13 +28,17 @@ class UsuariosController extends BaseController {
 	
 	public function Create()
 	{
-		
-		$auditoria = new AuditoriaModel;
-		$auditoria->usuario = Auth::user()->PrimerNombre." ".Auth::user()->PrimerApellido;
-		$auditoria->tabla = "Usuarios";
-		$auditoria->accion = "Agrego"." a ".Input::get('InputName')." ".Input::get('InputNamee');
+		$usuarioo = UsuariosModel::where('identificacion','=',Input::get('InputIden'))->get();
+		if ($usuarioo->count() == 1) {
+			Session::flash('message', 'Ya se encuentra un usuario con esta identificación');
+			Session::flash('class', 'danger');		
+		}else{
 
-
+			$auditoria = new AuditoriaModel;
+			$auditoria->tabla = "Usuarios";
+			$auditoria->accion = "Agrego"." a ".Input::get('InputName')." ".Input::get('InputNamee')." ID: ".Input::get('InputIden');
+            if ($auditoria->save()){
+				UsuarioAuditoriaModel::create(['id_usuario' => Auth::user()->id_usuario, 'id_auditoria' => $auditoria->id_auditoria]);
 
 		$usuario = new UsuariosModel;
 
@@ -60,7 +64,6 @@ class UsuariosController extends BaseController {
 		$usuario->id_cargo = Input::get('InputCargo');
 		
 		if ($usuario->save()){
-			$auditoria->save();
 			$file->move("assets/images/avatars",$file->getClientOriginalName());
 			Session::flash('message', 'Personal creado correctamente!');
 			Session::flash('class', 'success');
@@ -68,8 +71,14 @@ class UsuariosController extends BaseController {
 			Session::flash('message', 'Ocurrio un error!');
 			Session::flash('class', 'danger');
 		}
+	}else{
+			Session::flash('message', 'Ocurrio un error!');
+			Session::flash('class', 'danger');
+		}
+	}
 
-		return Redirect::to('FormUsuario');
+		$usuarios = UsuariosModel::all();
+		return View::make('usuarios.detallesusuarios', array('todousuarios' => $usuarios));
 
 	}
 	public function Listar()

@@ -89,7 +89,7 @@
                                     <i class="ace-icon fa fa-pencil bigger-130 tooltip-success" data-rel="tooltip" title="Editar"></i>
                                   </a>
 
-                                  <a class="red" href="#" id="btn_eliminar" name="btn_eliminar" value="">
+                                  <a class="red" href="#" id="btn_eliminar" name="btn_eliminar" value="{{base64_encode($todo->id_usuario)}}">
                                     <i class="ace-icon fa fa-trash-o bigger-130 tooltip-error" data-rel="tooltip" title="Eliminar"></i>
                                   </a>
                                 </div>
@@ -118,7 +118,7 @@
                                       </li>
 
                                       <li>
-                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Eliminar" id="btn_eliminar" name="btn_eliminar" value="s">
+                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Eliminar" id="btn_eliminar" name="btn_eliminar" value="{{base64_encode($todo->id_usuario)}}s">
                                           <span class="red">
                                             <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                           </span>
@@ -148,7 +148,47 @@
       $('#alert').fadeOut(6000, function() {
         $(this).remove();
       });
+    // Confirmación para eliminar
+      $("table").on('click','#btn_eliminar', function() {
+        var id = $(this).attr('value');
+        bootbox.confirm({
+          size : 'small',
+          title : "Eliminar registro",
+          message: "Seguro que desea eliminar este registro?",
+          buttons: {
+            confirm: {
+             label: "Aceptar",
+             className: "btn-success btn-sm",
+            },
+            cancel: {
+             label: "Cancelar",
+             className: "btn-sm",
+            }
+          },
+          callback: function(result) {
+            if(result){
+              // alert('deletePersonal/'+id);
+              location.href = 'deletePersonal/'+id
+            }
+          }
+        });
+      }); 
+
+      $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+      
+      //tooltip placement on right or left
+      function tooltip_placement(context, source) {
+        var $source = $(source);
+        var $parent = $source.closest('table')
+        var off1 = $parent.offset();
+        var w1 = $parent.width();
     
+        var off2 = $source.offset();
+        //var w2 = $source.width();
+    
+        if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+        return 'left';
+      }
   </script>
 @stop
 	

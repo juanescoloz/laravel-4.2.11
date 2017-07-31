@@ -148,7 +148,47 @@
       $('#alert').fadeOut(6000, function() {
         $(this).remove();
       });
+    // Confirmación para eliminar
+      $("table").on('click','#btn_eliminar', function() {
+        var id = $(this).attr('value');
+        bootbox.confirm({
+          size : 'small',
+          title : "Eliminar registro",
+          message: "Seguro que desea eliminar este registro?",
+          buttons: {
+            confirm: {
+             label: "Aceptar",
+             className: "btn-success btn-sm",
+            },
+            cancel: {
+             label: "Cancelar",
+             className: "btn-sm",
+            }
+          },
+          callback: function(result) {
+            if(result){
+              // alert('deletePersonal/'+id);
+              location.href = 'deletePersonal/'+id
+            }
+          }
+        });
+      }); 
+
+      $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+      
+      //tooltip placement on right or left
+      function tooltip_placement(context, source) {
+        var $source = $(source);
+        var $parent = $source.closest('table')
+        var off1 = $parent.offset();
+        var w1 = $parent.width();
     
+        var off2 = $source.offset();
+        //var w2 = $source.width();
+    
+        if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+        return 'left';
+      }
   </script>
 @stop
 	

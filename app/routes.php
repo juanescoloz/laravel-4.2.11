@@ -50,6 +50,7 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::post('CrearProveedor', 'ProveedorController@Create');
 	Route::get('ListarProveedor', 'ProveedorController@Listar');
 	Route::get('modificarProveedor/{id}', 'ProveedorController@editarView');
+	Route::post('modificarProveedor/{id}', 'ProveedorController@editar');
 	
 
 	

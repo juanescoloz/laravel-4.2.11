@@ -80,14 +80,18 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{url('FormUsuario')}}">Crear Usuario</a></li>
-                      <li><a href="{{url('CalendarUsuario')}}">Crear Evento</a></li>
-  
-                      <li><a href="{{url('ListarUsuario')}}">Visualizar Usuarios</a></li>
-                    </ul>
-                  </li>
+
+              {{-- @if(Auth::user()->roles->descripcion == "Administrador")
+                    <li><a><i class="fa fa-home"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="{{url('FormUsuario')}}">Crear Usuario</a></li>
+                        <li><a href="{{url('CalendarUsuario')}}">Crear Evento</a></li>
+    
+                        <li><a href="{{url('ListarUsuario')}}">Visualizar Usuarios</a></li>
+                      </ul>
+                    </li>
+              @endif --}}
+
                   <li><a><i class="fa fa-edit"></i> Proveedores <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('FormProveedor')}}">Crear Proveedor</a></li>
@@ -297,7 +301,7 @@
     <!-- Custom Theme Scripts -->
     <script src="{{url('build/js/custom.min.js')}}"></script>
 
-
+    
     @yield('scripts_relative')
 	
   </body>

@@ -4,8 +4,8 @@ class PrincipalController extends BaseController {
 	public function index()
 	{
 		$usuarios = PrincipalModel::all();
-		$usuariosm = PrincipalModel::where('sexo','=','Masculino')->get();
-		$usuariof = PrincipalModel::where('sexo','=','Femenino')->get();
+		$usuariosm = PrincipalModel::where('sexo','=','M')->get();
+		$usuariof = PrincipalModel::where('sexo','=','F')->get();
 		/*echo json_encode($usuariosm);*/
 		return View::make('PaginaPrincipal', array('todosusuarios' => $usuarios, 'todosusuariosm' => $usuariosm),['todosusuariosf' => $usuariof]);
 	}

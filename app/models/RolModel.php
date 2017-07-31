@@ -9,6 +9,7 @@ class RolModel extends Eloquent {
 	
 	protected $primaryKey = 'id_rol';
 
+	protected $fillable = array('descripcion');
 
 	public $timestamps = false;
 	

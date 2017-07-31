@@ -82,19 +82,17 @@
                       <ul class="list-unstyled user_data">
                         
                         <li>
-                          <i class="fa fa-user user-profile-icon"></i> Usuario. {{$todo->username}}
+                          <i class="fa fa-user user-profile-icon"></i><b> Usuario:</b> {{$todo->username}}
                         </li>
                         <li>
-                          <i class="fa fa-check-circle-o user-profile-icon"></i> Tipo. {{$todo->roles->descripcion}}
+                          <i class="fa fa-check-circle-o user-profile-icon"></i><b> Tipo:</b> {{$todo->roles->descripcion}}
                         </li>
-                        <li><i class="fa fa-map-marker user-profile-icon"></i> Ciudad. {{$todo->ciudades->descripcion}}, {{$todo->paises->descripcion}}
+                        <li><i class="fa fa-map-marker user-profile-icon"></i><b> Ciudad:</b> {{$todo->ciudades->descripcion}}, {{$todo->paises->descripcion}}
                         </li>
                       </ul>
 
                       <hr/>
-                      <button type="button" class="btn btn-primary">
-                        <i class="fa fa-pencil" aria-hidden="true"></i> Editar Información
-                      </button>
+                      <a class="btn btn-primary" href="{{url('modificarUsuario')}}/{{$todo->id_usuario}}"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Información</a>
                     </div>
 
                     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -102,7 +100,7 @@
                      <!-- cliente -->
                             <div class="profile-user-info profile-user-info-striped">
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> Nombre </div>
+                                  <div class="profile-info-name"><b> Nombre </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="nombres">{{$todo->nombres}} {{$todo->apellidos}}</span>
@@ -110,14 +108,14 @@
                                 </div>
 
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> Identifiación </div>
+                                  <div class="profile-info-name"><b> Identifiación </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="apellidos">{{$todo->identificacion}}</span>
                                   </div>
                                 </div>
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> Cargo </div>
+                                  <div class="profile-info-name"><b> Cargo </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="identificacion">{{$todo->cargos->descripcion}}</span>
@@ -125,7 +123,7 @@
                                 </div>
 
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> Teléfono </div>
+                                  <div class="profile-info-name"><b> Teléfono </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="telefono">{{$todo->telefono}}</span>
@@ -133,7 +131,7 @@
                                 </div>
 
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> Celular </div>
+                                  <div class="profile-info-name"><b> Celular </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="celular">{{$todo->celular}}</span>
@@ -141,7 +139,7 @@
                                 </div>
 
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> Dirección </div>
+                                  <div class="profile-info-name"><b> Dirección </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="direccion">{{$todo->direccion}}</span>
@@ -149,7 +147,7 @@
                                 </div>
 
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> E-mail </div>
+                                  <div class="profile-info-name"><b> E-mail </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="fecha">{{$todo->email}}</span>
@@ -157,7 +155,7 @@
                                 </div>
 
                                 <div class="profile-info-row">
-                                  <div class="profile-info-name"> Estado </div>
+                                  <div class="profile-info-name"><b> Estado </b></div>
 
                                   <div class="profile-info-value">
                                     <span class="editable" id="estado">{{$todo->estados->descripcion}}</span>
@@ -171,10 +169,10 @@
                     {{-- inician o tab --}}
                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
                       <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Actividad Reciente</a>
+                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true"><b>Actividad Reciente</b></a>
                           </li>
                           @if(Auth::User()->id_usuario == $todo->id_usuario)
-                            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Cambiar Contraseña</a>
+                            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false"><b>Cambiar Contraseña</b></a>
                           @endif
                           </li>
                         </ul>
@@ -182,18 +180,18 @@
                         <div id="myTabContent" class="tab-content">
                           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
                       <!-- auditoria -->
-                            <table class="data table table-striped no-margin">
-                              <thead>
-                                <tr>
-                                  <th></th>
-                                  <th>Usuario</th>
-                                  <th>Acción</th>
-                                  <th>Fecha y Hora</th>
-                                  <th>Modulo</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                @foreach($todo->auditorias as $auditorias)
+                            <table id="datatable-buttons" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Avatar</th>
+                          <th>Usuario</th>
+                          <th>Acción</th>
+                          <th>Fecha y Hora</th>
+                          <th>Modulo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         @foreach($todo->auditorias as $auditorias)
                                 <tr>
                                
                                   <td>
@@ -207,9 +205,8 @@
                                     <td>{{$auditorias->tabla}}</td>
                                 </tr>
                                @endforeach
-                               
-                              </tbody>
-                            </table>
+                      </tbody>
+                    </table>
                             <!-- auditoria-->
                             </div> 
                             {{-- fin contenido del primer tab --}}
