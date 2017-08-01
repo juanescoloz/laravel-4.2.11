@@ -5,7 +5,6 @@
 @stop
 
 @section('css_page')
-  
 
 
 @stop
@@ -71,17 +70,30 @@
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input type="text" class="form-control" id="InputDireccion" name="InputDireccion" placeholder="Direccion Residencia">
-                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                        <span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" id="InputBarrio" name="InputBarrio" placeholder="Barrio" required="required">
+                        <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input type="text" class="form-control" id="InputTel" name="InputTel" data-inputmask="'mask' : '(999) 999-9999'" placeholder="Telefono" required="required">
-                        <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
+                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                       </div>
 
-                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputBarrio" name="InputBarrio" placeholder="Barrio" required="required">
-                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                      
+
+                      <div class="form-group">
+                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="imagen">
+                        Foto:</label>
+
+                        <div class="col-xs-12 col-sm-9">
+                          <div class="clearfix col-xs-12 col-sm-9">
+                            <input type="file" id="id-input-file-3" name="imagen" > 
+                          </div>
+                        </div>
                       </div>
 
                       <div class="form-group">
@@ -106,14 +118,18 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha Nacimiento</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Fecha Nacimiento" id="InputFechaNac" name="InputFechaNac" required="required">
+                            <input type="text" class="form-control has-feedback-left" id="single_cal3" name="InputFechaNac" aria-describedby="inputSuccess2Status3">
+                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>   
+                            <span id="inputSuccess2Status3" class="sr-only">(success)</span>     
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha Ingreso</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" id="InputFechaIngre" name="InputFechaIngre" required="required" placeholder="Fecha Ingreso">
+                            <input type="text" class="form-control has-feedback-left" id="single_cal2" name="InputFechaIngre" aria-describedby="inputSuccess2Status2">
+                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                          <span id="inputSuccess2Status2" class="sr-only">(success)</span>
                         </div>
                       </div>
 
@@ -165,6 +181,7 @@
                           </select>
                         </div>
                       </div>
+                        
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">ARL</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
@@ -206,7 +223,38 @@
               </div>
 @stop
 @section('scripts_page')
-  
+
+  <script>
+    $('#myDatepicker').datetimepicker();
+    
+    $('#myDatepicker2').datetimepicker({
+        format: 'DD.MM.YYYY'
+    });
+    
+    $('#myDatepicker3').datetimepicker({
+        format: 'hh:mm A'
+    });
+    
+    $('#myDatepicker4').datetimepicker({
+        ignoreReadonly: true,
+        allowInputToggle: true
+    });
+
+    $('#datetimepicker6').datetimepicker();
+    
+    $('#datetimepicker7').datetimepicker({
+        useCurrent: false
+    });
+    
+    $("#datetimepicker6").on("dp.change", function(e) {
+        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+    });
+    
+    $("#datetimepicker7").on("dp.change", function(e) {
+        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+    });
+</script>
+
 @stop
   
   </body>
