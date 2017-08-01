@@ -100,7 +100,7 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Recursos Humanos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="general_elements.html">Empleados</a></li>
+                      <li><a href="{{url('ListarEmpleados')}}">Empleados</a></li>
                       <li><a href="media_gallery.html">------</a></li>
                       <li><a href="calendar.html">-------</a></li>
                     </ul>

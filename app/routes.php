@@ -53,8 +53,12 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::post('modificarProveedor/{id}', 'ProveedorController@editar');
 	
 
-	
-	
+	//rutas recursos humanos
+	Route::get('FormEmpleado', 'EmpleadosController@Mostrar');
+	Route::post('CrearEmpleado', 'EmpleadosController@Create');
+	Route::get('ListarEmpleados', 'EmpleadosController@Listar');
+	Route::get('PerfilEmpleado/{id}', 'EmpleadosController@PerfilEmpleado');
+	Route::get('modificarEmpleado/{id}', 'EmpleadosController@editarView');
 	
 	
 
