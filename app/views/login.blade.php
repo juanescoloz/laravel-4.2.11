@@ -45,7 +45,7 @@
               </div>
 
               <div class="clearfix"></div>
-
+                    
               <div class="separator">
                 <p class="change_link">Nuevo en el sitio?
                   <a href="#signup" class="to_register"> Crear Cuenta </a>
@@ -60,8 +60,19 @@
                 </div>
               </div>
             </form>
+            @if(Session::has('message'))
+                      <div id="alert">
+                        <div class="col-sm-12 hr hr-18 hr-double dotted"></div>
+                        <div class="col-sm-4 col-xs-12 col-sm-offset-4 alert alert-{{Session::get('class')}}">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          {{Session::get('message')}}
+                          <br>
+                        </div>
+                      </div>
+                    @endif
           </section>
         </div>
+
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
@@ -97,5 +108,11 @@
         </div>
       </div>
     </div>
+      <script>
+    // Tiempo del mensaje
+      $('#alert').fadeOut(6000, function() {
+        $(this).remove();
+      });
+  </script>
   </body>
 </html>

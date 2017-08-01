@@ -36,6 +36,8 @@ class LoginController extends BaseController{
         }else{
         // Si los datos no son los correctos volvbnemos al login y mostramos un error
             // return Redirect::back()->with('error_message', 'Los datos no concuerdan con ningun usuario')->withInput();
+            Session::flash('message', 'Credenciales Erroneas');
+			Session::flash('class', 'danger');
             return View::make('login');
         }
 	}
