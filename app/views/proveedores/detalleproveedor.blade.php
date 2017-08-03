@@ -48,7 +48,7 @@
                   <div class="x_content">
                   <a class="btn btn-primary" href="{{url('FormProveedor')}}"><i class="fa fa-user-plus"></i> Crear Proveedor</a>
                     <p class="text-muted font-13 m-b-30">
-                      Importar
+                      
                     </p>
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>

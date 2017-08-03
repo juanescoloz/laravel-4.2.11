@@ -81,26 +81,39 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
 
-              {{-- @if(Auth::user()->roles->descripcion == "Administrador") --}}
-                    <li><a><i class="fa fa-home"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+<!-- contactos -->
+                  <li><a><i class="fa fa-edit"></i> Contactos <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="{{url('FormUsuario')}}">Crear Usuario</a></li>
-                        <li><a href="{{url('CalendarUsuario')}}">Crear Evento</a></li>
-    
-                        <li><a href="{{url('ListarUsuario')}}">Visualizar Usuarios</a></li>
+                          <li><a href="{{url('FormProveedor')}}">Crear Proveedor</a></li>
+                          <li><a href="{{url('ListarProveedor')}}">Visualizar Proveedores</a></li>
+                          <li><a href="{{url('FormCliente')}}">Crear Cliente</a></li>
+                          <li><a href="{{url('FormCliente')}}">Visualizar Cliente</a></li>
+                      </ul>
+                  </li>
+
+<!-- fin contactos -->
+
+<!-- Ventas -->
+                   <li><a><i class="fa fa-table"></i> Ventas <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="tables.html">---------</a></li>
+                        <li><a href="tables_dynamic.html">--------</a></li>
                       </ul>
                     </li>
-            {{--   @endif --}}
+<!-- fin Ventas -->
 
-                  <li><a><i class="fa fa-edit"></i> Contactos <span class="fa fa-chevron-down"></span></a>
+<!-- Contabilidad -->
+                  <li><a><i class="fa fa-line-chart"></i> Contabilidad <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{url('FormProveedor')}}">Crear Proveedor</a></li>
-                      <li><a href="{{url('ListarProveedor')}}">Visualizar Proveedores</a></li>
-                      <li><a href="{{url('FormCliente')}}">Crear Cliente</a></li>
-                      <li><a href="{{url('FormCliente')}}">Visualizar Cliente</a></li>
-
+                      <li><a href="{{url('ListarFacturasCliente')}}">Facturas Cliente</a></li>
+                      <li><a href="{{url('ListarFacturasCliente')}}">Facturas Proveedor</a></li>
+                      <li><a href="{{url('ListarFacturasCliente')}}">Notas Contables</a></li>
+                      <li><a href="{{url('ListarFacturasCliente')}}">Lineas de Comprobantes</a></li>
                     </ul>
                   </li>
+<!-- Contabilidad -->
+
+<!-- Recursos Humanos -->
                   <li><a><i class="fa fa-desktop"></i> Recursos Humanos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('ListarEmpleados')}}">Empleados</a></li>
@@ -108,31 +121,49 @@
                       <li><a href="calendar.html">-------</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Ventas <span class="fa fa-chevron-down"></span></a>
+<!-- Fin Recursos Humanos -->
+
+<!-- Inventario -->
+                  <li><a><i class="fa fa-laptop"></i>Inventario <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.html">---------</a></li>
-                      <li><a href="tables_dynamic.html">--------</a></li>
+                      <li><a href="fixed_sidebar.html">----------</a></li>
+                      <li><a href="fixed_footer.html">----------</a></li>
                     </ul>
-                  </li>
+<!-- Fin Inventario -->  
+
+<!-- Informes -->
+
                   <li><a><i class="fa fa-bar-chart-o"></i> Informes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="chartjs.html">-------</a></li>
                       <li><a href="chartjs2.html">--------</a></li>
                     </ul>
                   </li>
+<!-- Fin Informes -->
+
+
+<!-- Usuarios -->
+            {{-- @if(Auth::user()->roles->descripcion == "Administrador") --}}
+                    <li><a><i class="fa fa-home"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="{{url('FormUsuario')}}">Crear Usuario</a></li>
+                        <li><a href="{{url('CalendarUsuario')}}">Crear Evento</a></li>
+                        <li><a href="{{url('ListarUsuario')}}">Visualizar Usuarios</a></li>
+                      </ul>
+                    </li>
+            {{--   @endif --}}
+<!-- Fin Usuarios -->  
+
+<!-- Configuracion -->
                   <li><a><i class="fa fa-clone"></i>Configuracion <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                      <li><a href="{{url('DetalleCuentas')}}">Cuentas</a></li>
                       <li><a href="fixed_sidebar.html">----------</a></li>
                       <li><a href="fixed_footer.html">----------</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-laptop"></i>Inventario <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">----------</a></li>
-                      <li><a href="fixed_footer.html">----------</a></li>
-                    </ul>
-                  </li>
-                </ul>
+<!-- Fin Configuracion -->          
+                    
               </div>
             </div>
             <!-- /sidebar menu -->
@@ -218,7 +249,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Juan Carlos Escobar Lozada ®
+            Juan Carlos Escobar Lozada ® & Carlos Julio Ospina Malpud ®
           </div>
           <div class="clearfix"></div>
         </footer>

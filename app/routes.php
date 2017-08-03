@@ -61,7 +61,9 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::get('ListarEmpleados', 'EmpleadosController@Listar');
 	Route::get('PerfilEmpleado/{id}', 'EmpleadosController@PerfilEmpleado');
 	Route::get('modificarEmpleado/{id}', 'EmpleadosController@editarView');
-	
-	
+
+	//rutas configuaracion
+	Route::get('DetalleCuentas', 'DetalleCuentasController@Mostrar');
+	Route::get('FormCrearCuenta', 'DetalleCuentasController@Crear');
 
 });
