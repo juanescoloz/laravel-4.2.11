@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Iniciar Sesion</title>
+    <title>Iniciar Sesión</title>
 
     <!-- Bootstrap -->
     <link href="{{url('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -31,7 +31,7 @@
         <div class="animate form login_form">
           <section class="login_content">
             <form action="{{url('entrar')}}" method="POST">
-              <h1>Iniciar Sesion</h1>
+              <h1>Iniciar Sesión</h1>
               <div>
                 <input type="text" class="form-control" placeholder="Usuario" required="" name="username" />
               </div>
