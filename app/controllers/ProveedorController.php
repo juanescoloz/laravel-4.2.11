@@ -11,6 +11,11 @@ class ProveedorController extends BaseController {
 
 		return View::make('proveedores.form', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas));
 	}
+	public function FormCliente()
+	{
+
+		return View::make('clientes.form');
+	}
 
 	
 	public function Create()

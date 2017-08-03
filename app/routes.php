@@ -51,6 +51,8 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::get('ListarProveedor', 'ProveedorController@Listar');
 	Route::get('modificarProveedor/{id}', 'ProveedorController@editarView');
 	Route::post('modificarProveedor/{id}', 'ProveedorController@editar');
+	Route::get('FormCliente', 'ProveedorController@FormCliente');
+	
 	
 
 	//rutas recursos humanos
