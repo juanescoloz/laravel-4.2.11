@@ -83,7 +83,7 @@ class UsuariosController extends BaseController {
 	}
 	public function Listar()
 	{	
-		$usuarios = UsuariosModel::all();
+		$usuarios = UsuariosModel::where('estado_id','=',1))->get();
 		return View::make('usuarios.detallesusuarios', array('todousuarios' => $usuarios));
 	}
 	public function Calendar()
