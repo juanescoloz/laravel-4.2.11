@@ -13,7 +13,17 @@
 @stop
 
 @section('contenido') 
-
+{{-- Inicio Panel Navegacion --}}
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <ul class="breadcrumb">
+      <li>
+        <i class="ace-icon fa fa-home home-icon"></i>
+        <a href="{{url('principal')}}">Inicio</a>
+      </li>
+      <li class="active">Listado Proveedores</li>
+    </ul><!-- /.breadcrumb -->
+  </div>
+{{-- Final Panel Navegacion --}}
 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
