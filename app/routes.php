@@ -53,6 +53,8 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::post('modificarProveedor/{id}', 'ProveedorController@editar');
 	Route::get('FormCliente', 'ProveedorController@FormCliente');
 	Route::get('CrearClientes', 'ProveedorController@CrearClientes');
+	Route::post('DeletePro', 'ProveedorController@delete');
+	
 	
 	//rutas clientes
 	Route::get('ListarCliente', 'ProveedorController@ListarClientes');

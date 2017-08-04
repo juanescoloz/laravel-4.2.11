@@ -97,6 +97,22 @@ class ProveedorController extends BaseController {
 		$proveedores = ProveedorModel::all();
 		return View::make('proveedores.detalleproveedor', array('todoproveedores' => $proveedores));
 	}
+
+	public function delete()
+	{
+		$proveedores = ProveedorModel::where('id_proveedor','=', Input::get('IdElimianr'));
+
+		if ($proveedores->delete()) {
+			Session::flash('message', 'Proveedor eliminado correctamente!');
+			Session::flash('class', 'success');
+		}else{
+			Session::flash('message', 'Ocurrio un error!');
+			Session::flash('class', 'danger');
+		}
+
+		$proveedores = ProveedorModel::all();
+		return View::make('proveedores.detalleproveedor', array('todoproveedores' => $proveedores));
+	}
 	
 
 

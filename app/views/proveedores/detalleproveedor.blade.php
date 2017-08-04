@@ -159,7 +159,7 @@
                           <h4 class="modal-title" id="myModalLabel2">Eliminar</h4>
                         </div>
                         <div class="modal-body">
-                         <form class="form-horizontal form-label-left" method="post" action="{{url('rdstes')}}" enctype="multipart/form-data">
+                         <form class="form-horizontal form-label-left" method="post" action="{{url('DeletePro')}}" enctype="multipart/form-data">
                             <input type="text" class="form-control" id="recipient-name" name="IdElimianr" style="visibility:hidden">
                               <h4>Esta Seguro de Eliminar Este Registro?</h4>
                               
