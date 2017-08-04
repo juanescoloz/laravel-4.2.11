@@ -23,7 +23,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Crear Cliente</h2>
+                    <h2>Clientes</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -46,15 +46,15 @@
                     {{-- inician o tab --}}
                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
                       <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true"><b>Crear Cliente</b></a>
+                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true"><b>Crear Proveedor</b></a>
                           </li>
-                            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false"><b>Crear Proveedor</b></a>
+                            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false"><b>Crear Cliente </b></a>
                           </li>
                         </ul>
                         {{-- agregamos el primer tab --}}
                         <div id="myTabContent" class="tab-content">
                           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                                  <form class="form-horizontal form-label-left" method="post" action="{{url('CrearProveedor')}}" enctype="multipart/form-data">
+                    <form class="form-horizontal form-label-left" method="post" action="{{url('CrearProveedor')}}" enctype="multipart/form-data">
 
                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Nombres" required="required">
@@ -237,9 +237,15 @@
                           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                           </div>
 
+
                             <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
-                            <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Tipo de Identificacion">
-                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                              <select class="form-control" id="InputTipoDocumento" name="InputTipoDocumento" required="required">
+                                <option value="">&nbsp;</option>
+                                @foreach($todotiposdocumentoss as $tiposs)
+                                <option value="{{$tiposs->id_tipo_documento}}">{{$tiposs->descripcion}}</option>
+                                @endforeach 
+                              </select>
+                              <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                             </div>
                         
                           
@@ -302,10 +308,15 @@
                       </div>
                       <div class="x_content"><br />
 
-                              <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
-                              <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Pais">
-                              <span class="fa fa-location-arrow form-control-feedback left" aria-hidden="true"></span>
-                              </div>
+                              <div class="col-md-3 col-sm-12 col-xs-12 form-group has-feedback">
+                                    <select class="select2_group form-control" id="InputCiudad" name="InputCiudad" required="required">
+                                        <option value="">&nbsp;</option>
+                                      @foreach($pais as $pais)
+                                        <option value="{{$pais->pais_id}}">{{$pais->descripcion}}</option>
+                                      @endforeach
+                                    </select>
+                                    <span class="fa fa-location-arrow form-control-feedback left" aria-hidden="true"></span>
+                                  </div>
 
                              
                                 <div class="col-md-3 col-sm-12 col-xs-12 form-group has-feedback">
@@ -313,10 +324,20 @@
                                 <span class="fa fa-location-arrow form-control-feedback left" aria-hidden="true"></span>
                                 </div>
 
-                                <div class="col-md-3 col-sm-12 col-xs-12 form-group has-feedback">
+                                 <div class="col-md-3 col-sm-12 col-xs-12 form-group has-feedback">
+                                    <select class="select2_group form-control" id="InputCiudad" name="InputCiudad" required="required">
+                                        <option value="">&nbsp;</option>
+                                      @foreach($ciudadess as $ciudades)
+                                        <option value="{{$ciudades->ciudad_id}}">{{$ciudades->descripcion}}</option>
+                                      @endforeach
+                                    </select>
+                                    <span class="fa fa-location-arrow form-control-feedback left" aria-hidden="true"></span>
+                                  </div>
+
+                                {{-- <div class="col-md-3 col-sm-12 col-xs-12 form-group has-feedback">
                                 <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Ciudad">
                                 <span class="fa fa-location-arrow form-control-feedback left" aria-hidden="true"></span>
-                                </div>
+                                </div> --}}
                                                             
                                 <div class="col-md-3 col-sm-12 col-xs-12 form-group has-feedback">
                                 <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Direccion">
@@ -355,11 +376,19 @@
                               <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                               </div>
 
-                              
                               <div class="col-md-3 col-sm-4 col-xs-3 form-group has-feedback">
+                                <select class="form-control" id="InputEstadoCivil" name="InputEstadoCivil" required="required">
+                                  <option value="">&nbsp;</option>
+                                  @foreach($tipospersonass as $todotipospersonas)
+                                  <option value="{{$todotipospersonas->id_tipo_persona}}">{{$todotipospersonas->descripcion}}</option>
+                                  @endforeach 
+                                </select>
+                                <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                              </div>
+                              {{-- <div class="col-md-3 col-sm-4 col-xs-3 form-group has-feedback">
                               <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Tipo de Persona">
                               <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                              </div>
+                              </div> --}}
 
                               
                               <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
@@ -404,17 +433,6 @@
 
 @stop
 @section('scripts_page')
-<!-- jQuery -->
-    <script src="{{url('vendors/jquery/dist/jquery.min.js')}}"></script>
-    <!-- Bootstrap -->
-    <script src="{{url('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <!-- FastClick -->
-    <script src="{{url('vendors/fastclick/lib/fastclick.js')}}"></script>
-    <!-- NProgress -->
-    <script src="{{url('vendors/nprogress/nprogress.js')}}"></script>
-    <!-- morris.js -->
-    <script src="{{url('vendors/raphael/raphael.min.js')}}"></script>
-    <script src="{{url('vendors/morris.js/morris.min.js')}}"></script>
     <!-- bootstrap-progressbar -->
     <script src="{{url('vendors/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script>
     <!-- bootstrap-daterangepicker -->

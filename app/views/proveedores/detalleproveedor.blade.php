@@ -46,7 +46,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  <a class="btn btn-primary" href="{{url('FormProveedor')}}"><i class="fa fa-user-plus"></i> Crear Proveedor</a>
+
+                  <a class="btn btn-primary" href="{{url('CrearClientes')}}"><i class="fa fa-user-plus"></i> Crear Proveedor</a>
                     <p class="text-muted font-13 m-b-30">
                       
                     </p>
@@ -99,7 +100,7 @@
                                     <i class="ace-icon fa fa-pencil bigger-130 tooltip-success" data-rel="tooltip" title="Editar"></i>
                                   </a>
 
-                                  <a class="red" href="#" id="btn_eliminar" name="btn_eliminar" value="">
+                                  <a class="red" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">
                                     <i class="ace-icon fa fa-trash-o bigger-130 tooltip-error" data-rel="tooltip" title="Eliminar"></i>
                                   </a>
                                 </div>
@@ -128,7 +129,7 @@
                                       </li>
 
                                       <li>
-                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Eliminar" id="btn_eliminar" name="btn_eliminar" value="s">
+                                        <a href="#" class="tooltip-error" data-rel="tooltip" data-toggle="modal" data-target=".bs-example-modal-sm">
                                           <span class="red">
                                             <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                           </span>
@@ -144,6 +145,32 @@
                     </table>
                   </div>
                 </div>
+
+                 <!-- Small modal -->
+                  {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> --}}
+
+                  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel2">Eliminar</h4>
+                        </div>
+                        <div class="modal-body">
+                          <h4>Esta Seguro de Eliminar Este Registro?</h4>
+                          
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /modals -->
               
 
 

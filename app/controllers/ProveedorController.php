@@ -6,10 +6,11 @@ class ProveedorController extends BaseController {
 	{
 		$estados = EstadoModel::all();
 		$ciudades = CiudadModel::all();
+
 		$tiposdocumentos = TipoDocumentoModel::all();
 		$tipospersonas = TipoPersonaModel::all();
 
-		return View::make('proveedores.form', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas));
+		return View::make('proveedores.form', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas ));
 	}
 	public function ListarProveedorCliente()
 	{
@@ -30,10 +31,14 @@ class ProveedorController extends BaseController {
 	{
 		$estados = EstadoModel::all();
 		$ciudades = CiudadModel::all();
+		$ciudadess = CiudadModel::all();
+		$pais = PaisModel::all();
 		$tiposdocumentos = TipoDocumentoModel::all();
+		$tiposdocumentoss = TipoDocumentoModel::all();
 		$tipospersonas = TipoPersonaModel::all();
+		$tipospersonass = TipoPersonaModel::all();
 
-		return View::make('clientes.formclientes', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas));
+		return View::make('clientes.formclientes', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas, 'todotiposdocumentoss' => $tiposdocumentoss,'ciudadess' => $ciudadess,'pais' => $pais,'tipospersonass' => $tipospersonass));
 		// return View::make('clientes.formclientes');
 	}
 
