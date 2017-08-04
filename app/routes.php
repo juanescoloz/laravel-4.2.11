@@ -54,6 +54,8 @@ Route::group(array('before'=> 'auth'), function(){
 	Route::get('FormCliente', 'ProveedorController@FormCliente');
 	Route::get('CrearClientes', 'ProveedorController@CrearClientes');
 	
+	//rutas clientes
+	Route::get('ListarCliente', 'ProveedorController@ListarClientes');
 	
 	
 

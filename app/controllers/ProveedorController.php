@@ -26,10 +26,15 @@ class ProveedorController extends BaseController {
 
 		return View::make('clientes.form');
 	}
-	public function FormCliente()
+	public function CrearClientes()
 	{
+		$estados = EstadoModel::all();
+		$ciudades = CiudadModel::all();
+		$tiposdocumentos = TipoDocumentoModel::all();
+		$tipospersonas = TipoPersonaModel::all();
 
-		return View::make('clientes.formclientes');
+		return View::make('clientes.formclientes', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas));
+		// return View::make('clientes.formclientes');
 	}
 
 	
