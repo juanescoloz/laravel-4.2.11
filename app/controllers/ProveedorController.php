@@ -11,6 +11,16 @@ class ProveedorController extends BaseController {
 
 		return View::make('proveedores.form', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas));
 	}
+	public function ListarProveedorCliente()
+	{
+		$estados = EstadoModel::all();
+		$ciudades = CiudadModel::all();
+		$tiposdocumentos = TipoDocumentoModel::all();
+		$tipospersonas = TipoPersonaModel::all();
+
+		return View::make('proveedores.form', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas));
+	}
+	
 	public function FormCliente()
 	{
 
@@ -72,6 +82,7 @@ class ProveedorController extends BaseController {
 		$proveedores = ProveedorModel::all();
 		return View::make('proveedores.detalleproveedor', array('todoproveedores' => $proveedores));
 	}
+	
 
 
 
