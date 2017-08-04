@@ -100,7 +100,7 @@
                                     <i class="ace-icon fa fa-pencil bigger-130 tooltip-success" data-rel="tooltip" title="Editar"></i>
                                   </a>
 
-                                  <a class="red" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                  <a class="red" href="#" data-toggle="modal" data-target=".bs-example-modal-sm" value="{{$todo->id_proveedor}}" data-whatever="{{$todo->id_proveedor}}">
                                     <i class="ace-icon fa fa-trash-o bigger-130 tooltip-error" data-rel="tooltip" title="Eliminar"></i>
                                   </a>
                                 </div>
@@ -129,7 +129,7 @@
                                       </li>
 
                                       <li>
-                                        <a href="#" class="tooltip-error" data-rel="tooltip" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                        <a href="#" class="tooltip-error" data-rel="tooltip" data-toggle="modal" data-target=".bs-example-modal-sm" value="{{$todo->id_proveedor}}" data-whatever="{{$todo->id_proveedor}}">
                                           <span class="red">
                                             <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                           </span>
@@ -149,7 +149,7 @@
                  <!-- Small modal -->
                   {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> --}}
 
-                  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true" id="exampleModal">
                     <div class="modal-dialog modal-sm">
                       <div class="modal-content">
 
@@ -159,14 +159,16 @@
                           <h4 class="modal-title" id="myModalLabel2">Eliminar</h4>
                         </div>
                         <div class="modal-body">
-                          <h4>Esta Seguro de Eliminar Este Registro?</h4>
-                          
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                          <button type="button" class="btn btn-danger">Eliminar</button>
-                        </div>
-
+                         <form class="form-horizontal form-label-left" method="post" action="{{url('rdstes')}}" enctype="multipart/form-data">
+                            <input type="text" class="form-control" id="recipient-name" name="IdElimianr" style="visibility:hidden">
+                              <h4>Esta Seguro de Eliminar Este Registro?</h4>
+                              
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+                              <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </div>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -181,6 +183,15 @@
 @stop
 @section('scripts_relative')
   <script>
+  $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Eliminar ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+});
     // Tiempo del mensaje
       $('#alert').fadeOut(6000, function() {
         $(this).remove();
