@@ -26,6 +26,11 @@ class ProveedorController extends BaseController {
 
 		return View::make('clientes.form');
 	}
+	public function FormCliente()
+	{
+
+		return View::make('clientes.formclientes');
+	}
 
 	
 	public function Create()
