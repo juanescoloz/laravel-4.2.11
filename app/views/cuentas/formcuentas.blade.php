@@ -100,8 +100,8 @@
                         <div class="col-md-5 col-sm-9 col-xs-12" > 
                           <select class="form-control" id="InputTipoDocumento" name="InputTipoDocumento" required="required" >
                          <option value="">&nbsp;</option>
-                            <option value="BALANCE">Debito</option>
-                            <option value="RESULTADO">Credito</option>
+                            <option value="BALANCE">Balance</option>
+                            <option value="RESULTADO">Resultado</option>
                           </select>
                         </div>
                       </div>

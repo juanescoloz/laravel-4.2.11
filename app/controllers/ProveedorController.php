@@ -27,6 +27,11 @@ class ProveedorController extends BaseController {
 
 		return View::make('clientes.form');
 	}
+	public function ListarClientes()
+	{
+
+		return View::make('clientes.detalleclientes');
+	}
 	public function CrearClientes()
 	{
 		$estados = EstadoModel::all();

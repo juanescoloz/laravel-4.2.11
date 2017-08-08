@@ -84,7 +84,7 @@
 <!-- contactos -->
                   <li><a><i class="fa fa-edit"></i> Contactos <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                           <li><a href="{{url('CrearClientes')}}">Crear Cliente</a></li>
+                           <li><a href="{{url('CrearClientes')}}">Crear Contacto</a></li>
                          {{--  <li><a href="{{url('FormProveedor')}}">Crear Proveedor</a></li> --}}
                           <li><a href="{{url('ListarProveedor')}}">Visualizar Proveedores</a></li>
                           {{-- <li><a href="{{url('FormCliente')}}">Crear Cliente</a></li> --}}

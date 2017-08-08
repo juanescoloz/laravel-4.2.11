@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title')
-  Prever Prevision General SAS
+  Contabilidad 360
 @stop
 
 @section('css_page')

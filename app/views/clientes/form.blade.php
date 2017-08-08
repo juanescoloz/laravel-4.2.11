@@ -23,8 +23,8 @@
           <div class="title_left">
           <h3>Crear Cliente</h3>
           </div>
-            </div>
-            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
           
 
               <div class="row">
@@ -143,6 +143,7 @@
 </div>
 <div class="x_content"><br />
 
+<form class="form-horizontal form-label-left" method="post" action="{{url('CrearCliente')}}" enctype="multipart/form-data">
 
                               <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
                               <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Pais">
@@ -192,7 +193,7 @@
                   <div class="x_content">
 
                     <br />
-
+                    <form class="form-horizontal form-label-left" method="post" action="{{url('CrearCliente')}}" enctype="multipart/form-data">
 
 
                               
@@ -232,7 +233,6 @@
                               <span class="fa fa-bar-chart form-control-feedback left" aria-hidden="true"></span>
                               </div>
                               </div>
-                              </form>
 
 
 </div>
