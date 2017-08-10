@@ -35,6 +35,7 @@ class ProveedorController extends BaseController {
 	public function CrearClientes()
 	{
 		$estados = EstadoModel::all();
+		$estadoss = EstadoModel::all();
 		$ciudades = CiudadModel::all();
 		$ciudadess = CiudadModel::all();
 		$pais = PaisModel::all();
@@ -43,7 +44,7 @@ class ProveedorController extends BaseController {
 		$tipospersonas = TipoPersonaModel::all();
 		$tipospersonass = TipoPersonaModel::all();
 
-		return View::make('clientes.formclientes', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas, 'todotiposdocumentoss' => $tiposdocumentoss,'ciudadess' => $ciudadess,'pais' => $pais,'tipospersonass' => $tipospersonass));
+		return View::make('clientes.formclientes', array('todoestados' => $estados,'ciudades' => $ciudades,'todotiposdocumentos' => $tiposdocumentos, 'todotipospersonas' => $tipospersonas, 'todotiposdocumentoss' => $tiposdocumentoss,'ciudadess' => $ciudadess,'pais' => $pais,'tipospersonass' => $tipospersonass,'todoestadoss' => $estadoss));
 		// return View::make('clientes.formclientes');
 	}
 

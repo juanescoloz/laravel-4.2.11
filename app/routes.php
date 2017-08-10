@@ -56,6 +56,7 @@ Route::group(array('before'=> 'auth'), function(){
 	
 	//rutas clientes
 	Route::get('ListarCliente', 'ProveedorController@ListarClientes');
+	Route::get('CrearCliente', 'ClienteController@create');
 	
 	
 

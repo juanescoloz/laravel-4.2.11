@@ -414,6 +414,19 @@
                               <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Cuenta de anticipo">
                               <span class="fa fa-bar-chart form-control-feedback left" aria-hidden="true"></span>
                               </div>
+
+
+                        <div class="col-md-3 col-sm-4 col-xs-3 form-group has-feedback">
+                        <select class="form-control" id="InputIdEstado" name="InputIdEstado" required="required" required="required">
+                            <option value="">&nbsp;</option>
+                            @foreach($todoestadoss as $todoestadoss)
+                            <option value="{{$todoestadoss->id_estado}}">{{$todoestadoss->descripcion}}</option>
+                            @endforeach 
+                          </select>
+                          <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                      
+
                               </div>
                               </form>
                               </div>
