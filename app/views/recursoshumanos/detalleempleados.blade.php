@@ -59,7 +59,8 @@
                          @foreach($todoempleados as $todo)
                             <tr>
                               <td class="text-center">
-                                <img src="{{asset('assets/images/avatars')}}/{{$todo->imagen}}" alt="{{$todo->imagen}}" class="img-circle" width="50px" height="50px">
+                              <a href="{{url('PerfilEmpleado')}}/{{$todo->id_empleado}}" alt="Ver Perfil">
+                                <img src="{{asset('assets/images/avatars')}}/{{$todo->imagen}}" alt="{{$todo->imagen}}" class="img-circle" width="50px" height="50px"></a>
                               </td>
                               <td>
                                 {{$todo->identificacion}}
