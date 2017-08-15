@@ -13,5 +13,8 @@ class RolModel extends Eloquent {
 
 	public $timestamps = false;
 	
+	public function permisos(){
+        return $this->belongsToMany('PermisoModel'); 
+    }
 
 }
