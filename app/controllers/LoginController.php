@@ -25,7 +25,6 @@ class LoginController extends BaseController{
         // Verificamos los datos
         if (Auth::attempt($data)) 
         {
-        	$rol = RolModel::all();
             // Si nuestros datos son correctos mostramos la página de inicio
             $auditoria = new AuditoriaModel;
 			$auditoria->tabla = "Login";
@@ -34,7 +33,7 @@ class LoginController extends BaseController{
 				UsuarioAuditoriaModel::create(['id_usuario' => Auth::user()->id_usuario, 'id_auditoria' => $auditoria->id_auditoria]);
 
 
-				return Redirect::intended('principal', array('roles' => $rol));
+				return Redirect::intended('principal');
 			}
         }else{
         // Si los datos no son los correctos volvbnemos al login y mostramos un error

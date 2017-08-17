@@ -82,9 +82,11 @@
                 <ul class="nav side-menu">
 
 <!-- contactos -->
-          @if(Auth::user()->rol->descripcion == "Administrador")
-              @foreach(Auth::user()->rol->permisos as $permiso)
+          {{-- @if(Auth::User()->rol->descripcion == "Administrador") --}}
+              @foreach(Auth::User()->rol->permisos as $permiso)
+
                 @if($permiso->descripcion == "Contactos")
+
                   <li><a><i class="fa fa-edit"></i> Contactos <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                            <li><a href="{{url('CrearClientes')}}">Crear Contacto</a></li>
@@ -95,8 +97,8 @@
                       </ul>
                   </li>
                 @endif
-              @endforeach
-          @endif
+             
+          {{-- @endif --}}
 
 <!-- fin contactos -->
 
@@ -107,6 +109,7 @@
                         <li><a href="tables_dynamic.html">--------</a></li>
                       </ul>
                     </li>
+              @endforeach
 <!-- fin Ventas -->
 
 <!-- Contabilidad -->

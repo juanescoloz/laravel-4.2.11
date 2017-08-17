@@ -6,7 +6,7 @@ class RolPermiso extends Eloquent {
 	
 	protected $table = 'rol_permisos';
 
-	protected $fillable = array('id_rol','id_permisos');
+	protected $fillable = array('rol_id','permisos_id');
 
 	public $timestamps = false;
 

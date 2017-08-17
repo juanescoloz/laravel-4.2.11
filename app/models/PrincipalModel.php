@@ -1,16 +1,16 @@
 <?php
 
 
-class PrincipalModel extends Eloquent {
+// class PrincipalModel extends Eloquent {
 
 	
 
-	protected $table = 'usuario';
+	// protected $table = 'usuario';
 	
-	protected $primaryKey = 'id_usuario';
+	// protected $primaryKey = 'id_usuario';
 
 
-	public $timestamps = false;
+	// public $timestamps = false;
 	
 
-}
+// }
