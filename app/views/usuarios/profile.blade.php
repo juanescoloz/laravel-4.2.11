@@ -85,7 +85,7 @@
                           <i class="fa fa-user user-profile-icon"></i><b> Usuario:</b> {{$todo->username}}
                         </li>
                         <li>
-                          <i class="fa fa-check-circle-o user-profile-icon"></i><b> Tipo:</b> {{$todo->roles->descripcion}}
+                          <i class="fa fa-check-circle-o user-profile-icon"></i><b> Tipo:</b> {{$todo->rol->descripcion}}
                         </li>
                         <li><i class="fa fa-map-marker user-profile-icon"></i><b> Ciudad:</b> {{$todo->ciudades->descripcion}}, {{$todo->paises->descripcion}}
                         </li>

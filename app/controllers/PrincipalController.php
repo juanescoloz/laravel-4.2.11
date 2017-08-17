@@ -10,6 +10,9 @@ class PrincipalController extends BaseController {
 		return View::make('PaginaPrincipal', array('todosusuarios' => $usuarios, 'todosusuariosm' => $usuariosm),['todosusuariosf' => $usuariof]);
 	}
 
+
+
+
 	/*public function index()
 	{
 		return View::make('index');

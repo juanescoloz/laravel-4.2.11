@@ -82,7 +82,7 @@
                 <ul class="nav side-menu">
 
 <!-- contactos -->
-          {{-- @if(Auth::User()->rol->descripcion == "Administrador") --}}
+          {{-- @if(Auth::User()->rol->descripcion == "Administrador")  esta es la validacion por rol--}}
               @foreach(Auth::User()->rol->permisos as $permiso)
 
                 @if($permiso->descripcion == "Contactos")

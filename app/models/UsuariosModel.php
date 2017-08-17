@@ -24,7 +24,7 @@
 	// {
 	// 	return $this->belongsTo('RolModel','rol_id');
 	// }
-	// public function cargos()
+	// public function cargos()  
 	// {
 	// 	return $this->belongsTo('CargoModel','id_cargo');
 	// }
