@@ -20,7 +20,7 @@ class UsuariosModel extends Eloquent implements UserInterface, RemindableInterfa
 	{
 		return $this->belongsTo('EstadoModel','estado_id');
 	}
-	public function roles()
+	public function rol()
 	{
 		return $this->belongsTo('RolModel','rol_id');
 	}

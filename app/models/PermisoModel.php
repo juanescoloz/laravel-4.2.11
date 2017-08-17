@@ -3,8 +3,6 @@
 
 class PermisoModel extends Eloquent {
 
-	
-
 	protected $table = 'permisos';
 	
 	protected $primaryKey = 'id_permisos';
@@ -13,8 +11,5 @@ class PermisoModel extends Eloquent {
 
 	public $timestamps = false;
 	
-	public function roles(){
-        return $this->belongsToMany('RolModel'); 
-    }
 
 }
