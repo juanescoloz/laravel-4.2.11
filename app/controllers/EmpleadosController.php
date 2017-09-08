@@ -45,7 +45,7 @@ class EmpleadosController extends BaseController {
 		$file = Input::file('imagen');
 
 		$empleados->imagen = Input::file('imagen')->getClientOriginalName();
-		$empleados->PrimerNombre = Input::get('InputName');
+		$empleados->PrimerNombre = strtoupper(Input::get('InputName'));
 		$empleados->SegundoNombre = Input::get('InputNamee');	
 		$empleados->PrimerApellido = Input::get('InputApe');
 		$empleados->SegundoApellido = Input::get('InputApee');

@@ -45,21 +45,21 @@
                     <form class="form-horizontal form-label-left" method="post" action="{{url('CrearEmpleado')}}" enctype="multipart/form-data">
 
                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Primer Nombre" required="required">
+                        <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Primer Nombre" required="required" onkeyup="mayus(this)">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="SegundoNombre(Opcional)" >
+                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="SegundoNombre(Opcional)" onkeyup="mayus(this)">
                         <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                       </div>
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="InputApe" name="InputApe" placeholder="Primer Apellido" required="required">
+                        <input type="text" class="form-control has-feedback-left" id="InputApe" name="InputApe" placeholder="Primer Apellido" required="required" onkeyup="mayus(this)">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputApee" name="InputApee" placeholder="Segundo Apellido(Opcional)" >
+                        <input type="text" class="form-control" id="InputApee" name="InputApee" placeholder="Segundo Apellido(Opcional)" onkeyup="mayus(this)">
                         <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                       </div>
 
@@ -69,7 +69,7 @@
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputDireccion" name="InputDireccion" placeholder="Direccion Residencia">
+                        <input type="text" class="form-control" id="InputDireccion" name="InputDireccion" placeholder="Direccion Residencia" onkeyup="mayus(this)">
                         <span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
                       </div>
 

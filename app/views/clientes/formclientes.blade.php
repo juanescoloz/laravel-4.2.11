@@ -57,12 +57,12 @@
                     <form class="form-horizontal form-label-left" method="post" action="{{url('CrearProveedor')}}" enctype="multipart/form-data">
 
                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Nombres" required="required">
+                        <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Nombres" required="required" onkeyup="mayus(this)">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="Apellidos(Opcional)" >
+                        <input type="text" class="form-control" id="InputNamee" name="InputNamee" placeholder="Apellidos(Opcional)" onkeyup="mayus(this)">
                         <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                       </div>
 
@@ -115,7 +115,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Direccion</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" id="InputDireccion" name="InputDireccion" required="required">
+                          <input type="text" class="form-control" id="InputDireccion" name="InputDireccion" required="required" onkeyup="mayus(this)">
                         </div>
                       </div>
 
@@ -210,25 +210,25 @@
 
                   
                   <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
-                  <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Primer Nombre" required="required">
+                  <input type="text" class="form-control has-feedback-left" id="InputName" name="InputName" placeholder="Primer Nombre" required="required" onkeyup="mayus(this)">
                   <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                   </div>
 
                       
                       <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
-                      <input type="text" class="form-control has-feedback-left" id="inputSuccess3" placeholder="Segundo Nombre">
+                      <input type="text" class="form-control has-feedback-left" id="inputSuccess3" placeholder="Segundo Nombre" onkeyup="mayus(this)">
                       <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                        
                         <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="InputNamee" name="InputNamee" placeholder="Primer Apellido" required="required" >
+                        <input type="text" class="form-control has-feedback-left" id="InputNamee" name="InputNamee" placeholder="Primer Apellido" required="required" onkeyup="mayus(this)">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                         </div>
 
                           
                           <div class="col-md-3 col-sm-3 col-xs-3 form-group has-feedback">
-                          <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Segundo Apellido">
+                          <input type="text" class="form-control  has-feedback-left" id="inputSuccess3" placeholder="Segundo Apellido" onkeyup="mayus(this)">
                           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                           </div>  
 
@@ -461,9 +461,12 @@
     // Tiempo del mensaje
       $('#alert').fadeOut(6000, function() {
         $(this).remove();
-      });
-    
-  </script>
+      });  
 
+      function mayus(e) {
+        // body...
+        e.value = e.value.toUpperCase();
+      }
+  </script>
 @stop
   

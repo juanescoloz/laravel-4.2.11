@@ -9,8 +9,11 @@
 
     <title>@yield('title')</title>
 
+
     @yield('css_page')
 
+    <!-- Personalizable -->
+    <!--<link rel="stylesheet" type="text/css" href="{{url('vendors/stylesheet.css')}}">-->
     <!-- Bootstrap -->
     <link href="{{url('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
